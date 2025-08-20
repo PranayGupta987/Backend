@@ -53,5 +53,7 @@ app.get("/",(req,res)=>{
 })
 
 
-
+app.get("/google",(req,res)=>{
+    res.redirect("https://google.com");
+})
 
