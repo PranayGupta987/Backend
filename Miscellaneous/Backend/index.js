@@ -20,3 +20,22 @@ app.post("/register",(req,res) => {
 app.listen(port,()=>{
     console.log(`Listening to ${port}`)
 })
+
+app.get("/",(req,res)=>{
+    res.send("hello hi i am pranay gupta");
+})
+
+
+app.get("/reg",(req,res)=>{
+    let {user,password}=req.query;
+    res.send(`hi my name is ${user} & i gave my password as ${password}`);
+    
+})
+
+app.post("/reg",(req,res)=>{
+    let {user,password}=req.body;
+    console.log({user,password});
+    
+    res.send(`hi my name is ${user} & i gave my password as ${password}`);
+    
+})
