@@ -47,3 +47,11 @@ app.post("/posts",(req,res)=>{
 app.listen(port,()=>{
     console.log(`Listening to ${port}`);
 })
+
+app.get("/",(req,res)=>{
+    res.send("Yeah ! Its Working !");
+})
+
+
+
+
