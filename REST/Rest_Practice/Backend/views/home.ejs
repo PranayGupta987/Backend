@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hostel Complaint Box</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Complaint Box</h1>
+
+  <!-- Complaint Form -->
+  <div class="form-box">
+    <h2>Add Complaint</h2>
+    <form action="/home" method="post">
+      <input name="title" type="text" placeholder="Enter complaint title" required><br><br>
+      <textarea name="description" placeholder="Enter complaint description" required></textarea><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Complaint List -->
+  <h1>Complaints</h1>
+  <ul>
+    <% for(let i = 0; i < complaints.length; i++) { %>
+      <li>
+        <b><%= complaints[i].title %></b> - <%= complaints[i].status %> - 
+        <%= complaints[i].id %> - <%= complaints[i].description %>
+
+        <!-- Delete Button -->
+        <form action="/home/delete/<%= complaints[i].id %>" method="post" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% } %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hostel Complaint Box</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Complaint Box</h1>
+
+
+  <h1>Complaints</h1>
+<ul>
+      <b><%= complaint.title %></b> - <%= complaint.status %> <br> 
+      <%= complaint.id %> - <%= complaint.description %> <br>
+    </li>
+</ul>
+  <!-- Complaint Form -->
+  <div class="form-box">
+    <h2>Edit Complaint</h2>
+    <form action="/home/edit/<%= complaint.id %>" method="post">
+      <input name="title" type="text" placeholder="Enter new complaint title" required><br><br>
+      <textarea name="description" placeholder="Enter new complaint description" required></textarea><br><br>
+      <button name ="button" type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
