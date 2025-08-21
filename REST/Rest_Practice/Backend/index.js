@@ -92,4 +92,3 @@ app.post("/home/delete/:id", (req, res) => {
     // After deleting, redirect to home (or render a "deleted" page if you want)
     res.redirect("/home");
 });
-
