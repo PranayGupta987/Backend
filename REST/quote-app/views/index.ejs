@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuoteBook</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>📖 QuoteBook</h1>
+
+  <!-- Link to add new quote -->
+  <a href="/quotes/new">➕ Add New Quote</a>
+
+  <hr>
+
+  <!-- Show all quotes -->
+  <% if (quotes.length === 0) { %>
+    <p>No quotes yet. Add one!</p>
+  <% } else { %>
+    <ul>
+      <% quotes.forEach((quote, index) => { %>
+        <li>
+          "<%= quote.text %>" 
+          — <strong><%= quote.author %></strong>
+
+          <!-- Delete form -->
+          <form action="/quotes/<%= index %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">❌ Delete</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Books</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Book List</h1>
+  <ul>
+    <% if (books.length === 0) { %>
+      <p>No books yet.</p>
+    <% } else { %>
+      <% books.forEach(book => { %>
+        <li><strong><%= book.title %></strong> by <%= book.author %></li>
+      <% }) %>
+    <% } %>
+  </ul>
+
+  <a href="/books/new">Add a New Book</a>
+</body>
+</html>
